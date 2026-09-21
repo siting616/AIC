@@ -1,0 +1,28 @@
+root_dir: "."
+data_dir: "初赛数据集-基于大模型的多模态视觉理解与推理"
+json_file: "初赛数据集-基于大模型的多模态视觉理解与推理/queries/queries.json"
+
+# Keep V6 completely separate from the preliminary run and the V4 best result.
+outputs_dir: "outputs/experiments/v6_rescue"
+visualization_dir: "outputs/experiments/v6_rescue/visualizations"
+prediction_dir: "outputs/experiments/v6_rescue/predictions"
+submission_dir: "outputs/experiments/v6_rescue/submissions"
+
+baseline:
+  name: "grounding_dino"
+
+model:
+  grounding_dino:
+    model_id: "IDEA-Research/grounding-dino-tiny"
+    device: "cuda"
+    score_threshold: 0.15
+    text_threshold: 0.15
+    rescue_score_threshold: 0.10
+    rescue_text_threshold: 0.10
+    top_k: 5
+
+runtime:
+  checkpoint_every: 100
+
+eval:
+  iou_threshold: 0.5

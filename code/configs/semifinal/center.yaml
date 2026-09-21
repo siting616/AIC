@@ -1,0 +1,14 @@
+root_dir: "."
+data_dir: "../复赛数据集-基于大模型的多模态视觉理解与推理"
+json_file: "../复赛数据集-基于大模型的多模态视觉理解与推理/queries/queries.json"
+
+outputs_dir: "../outputs/center"
+visualization_dir: "../outputs/center/visualizations"
+prediction_dir: "../outputs/center/predictions"
+submission_dir: "../outputs/center/submissions"
+
+baseline:
+  name: "center"
+
+eval:
+  iou_threshold: 0.5

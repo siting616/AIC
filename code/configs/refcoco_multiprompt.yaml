@@ -1,0 +1,18 @@
+data_dir: "."
+json_file: "data/validation/refcoco_val.json"
+
+model:
+  grounding_dino:
+    model_id: "IDEA-Research/grounding-dino-tiny"
+    device: "cuda"
+    score_threshold: 0.15
+    text_threshold: 0.15
+    rescue_score_threshold: 0.10
+    rescue_text_threshold: 0.10
+    top_k: 5
+
+baseline:
+  name: "grounding_dino"
+
+runtime:
+  checkpoint_every: 50

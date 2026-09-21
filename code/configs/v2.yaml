@@ -1,0 +1,32 @@
+version: V2-conservative-delta
+
+# This configuration extends the existing Windows project.  It deliberately
+# does not contain the Linux/AutoDL paths from the hand-off document.
+baseline:
+  registry: outputs/leaderboard/best_baseline.json
+  immutable: true
+
+planner:
+  parser: deterministic_v2
+  group_by_scene: true
+  ordinary_queries_keep_baseline: true
+
+routes:
+  ordinal: true
+  depth: true
+  fallback: true
+  infrared: true
+  part: false
+  ocr: false
+  refine: false
+
+override:
+  conservative: true
+  default_allow: false
+
+outputs:
+  directory: outputs/v2
+  plan: route_plan.json
+  change_report: change_report.json
+  run_summary: run_summary.json
+

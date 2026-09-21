@@ -1,0 +1,30 @@
+root_dir: "."
+data_dir: "初赛数据集-基于大模型的多模态视觉理解与推理"
+json_file: "初赛数据集-基于大模型的多模态视觉理解与推理/queries/queries.json"
+
+outputs_dir: "outputs/preliminary"
+visualization_dir: "outputs/preliminary/visualizations"
+prediction_dir: "outputs/preliminary/predictions"
+submission_dir: "outputs/preliminary/submissions"
+
+baseline:
+  name: "grounding_dino"
+
+model:
+  grounding_dino:
+    model_id: "IDEA-Research/grounding-dino-tiny"
+    device: "cuda"
+    score_threshold: 0.25
+    text_threshold: 0.20
+    # Reuse the same model output at lower thresholds only when the primary
+    # thresholds return no box. This replaces many fixed center fallbacks
+    # without an additional model forward pass.
+    rescue_score_threshold: 0.12
+    rescue_text_threshold: 0.10
+    top_k: 5
+
+runtime:
+  checkpoint_every: 100
+
+eval:
+  iou_threshold: 0.5

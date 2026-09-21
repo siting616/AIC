@@ -1,0 +1,15 @@
+baseline:
+  name: "grounding_dino"
+
+model:
+  grounding_dino:
+    model_id: "IDEA-Research/grounding-dino-tiny"
+    device: "cuda"
+    score_threshold: 0.25
+    text_threshold: 0.20
+    rescue_score_threshold: 0.12
+    rescue_text_threshold: 0.10
+    top_k: 10
+
+runtime:
+  checkpoint_every: 10

@@ -1,0 +1,21 @@
+root_dir: "."
+data_dir: "data"
+json_file: "data/sample.json"
+
+outputs_dir: "outputs"
+visualization_dir: "outputs/visualizations"
+prediction_dir: "outputs/predictions"
+submission_dir: "outputs/submissions"
+
+baseline:
+  name: "oracle"
+
+model:
+  grounding_dino:
+    model_id: "IDEA-Research/grounding-dino-tiny"
+    device: "cpu"
+    score_threshold: 0.25
+    text_threshold: 0.20
+
+eval:
+  iou_threshold: 0.5
