@@ -1,0 +1,39 @@
+{
+  "scenes": 1295,
+  "total": 5690,
+  "fallback": 0,
+  "fallback_rate": 0.0,
+  "mean_top_confidence": 0.6014,
+  "by_type": {
+    "other": {
+      "n": 1945,
+      "fb": 0,
+      "fb_rate": 0.0
+    },
+    "spatial": {
+      "n": 1560,
+      "fb": 0,
+      "fb_rate": 0.0
+    },
+    "ordinal": {
+      "n": 1719,
+      "fb": 0,
+      "fb_rate": 0.0
+    },
+    "depth": {
+      "n": 466,
+      "fb": 0,
+      "fb_rate": 0.0
+    }
+  },
+  "routing_enabled": {
+    "depth": {
+      "n": 777,
+      "fb_rate": 0.0
+    },
+    "infrared": {
+      "n": 176,
+      "fb_rate": 0.0
+    }
+  }
+}
