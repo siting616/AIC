@@ -41,4 +41,8 @@ python scripts/run_all_v1.py \
 
 依据：V28 同架构初赛榜实测 0.2977 为锚点；初复赛查询类型分布高度一致（序数 30.3%↔33.5%、空间 57.7%↔60.9%）；本版 fallback 率健康且全程零失败。
 
-**平台提交状态：待提交**
+**平台提交状态：首次提交失败（zip 内文件名不合要求），已修复**
+
+> ⚠️ 格式铁律：zip 内的 JSON **必须命名为 `prediction.json`**（首版误用 `prediction_v0.json` 被平台拒绝；JSON 内容本身合规，与 center 格式测试版逐字段一致）。
+>
+> 平台可直接使用本目录的 `submission_v0_fixed.zip`（内含 `prediction.json`）。
