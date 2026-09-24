@@ -1,15 +1,19 @@
-# 复赛基线
+# AIC 多模态视觉理解与推理
 
-本目录包含复赛完整运行材料：`code` 为算法代码、脚本和依赖，`复赛数据集-基于大模型的多模态视觉理解与推理` 为数据集，`outputs` 为运行结果。
+本仓库按比赛阶段整理代码：
 
-当前运行的是 `center` CPU 基线：对每条查询输出固定中心框 `[0.25, 0.25, 0.75, 0.75]`，用于验证数据读取、推理流程和提交文件格式，不代表真实视觉模型效果。
+| 目录 | 内容 |
+| --- | --- |
+| [`preliminary/`](preliminary/README.md) | 从初赛服务器保存的原始算法脚本、试验版本、辅助工具和小型配置；请从这里了解初赛方案。 |
+| `code/` | 复赛阶段的算法、运行脚本、配置和测试。 |
+| `results/` | 已纳入版本控制的结果材料。 |
 
-提交文件：`outputs/center/submissions/submission.zip`
+数据集、模型权重、运行日志、检查点及大体积预测文件不在 Git 仓库中。初赛运行前提和命令见 [`preliminary/README.md`](preliminary/README.md)。`preliminary/` 与 `code/` 是不同阶段的实现，不能直接视为同一版本。
 
-运行命令（在本目录的 `code` 目录执行）：
+复赛的 `center` CPU 基线对每条查询输出固定中心框 `[0.25, 0.25, 0.75, 0.75]`，用于验证数据读取、推理流程和提交格式，不代表真实视觉模型效果。在准备好复赛数据后，可从仓库根目录运行：
 
-```powershell
-cd D:\AIC_Challenge\复赛\code
-pip install -r requirements.txt
-python scripts\run_submit.py --config configs\semifinal\center.yaml --no-resume
+```bash
+cd code
+python -m pip install -r requirements.txt
+python scripts/run_submit.py --config configs/semifinal/center.yaml --no-resume
 ```
