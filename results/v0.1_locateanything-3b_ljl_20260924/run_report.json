@@ -1,0 +1,70 @@
+{
+  "version": "v0.1",
+  "status": "experimental_archive_not_platform_submitted",
+  "model": "nvidia/LocateAnything-3B",
+  "model_license": "NVIDIA License, non-commercial research/evaluation",
+  "hardware": "NVIDIA GeForce RTX 4090 24GB",
+  "software": {
+    "python": "3.10.20",
+    "torch": "2.12.0+cu126",
+    "transformers": "4.57.1"
+  },
+  "inference": {
+    "input_modality": "visible RGB only",
+    "generation_mode": "hybrid",
+    "do_sample": false,
+    "max_new_tokens": 128,
+    "default_max_image_side": 1792,
+    "fallback_max_image_sides": [1536, 1024],
+    "coordinate_conversion": "quantized 0-1000 coordinates divided by 1000",
+    "multi_box_policy": "first valid box"
+  },
+  "full_run": {
+    "queries": 5690,
+    "wall_minutes_before_repair": 219.1,
+    "median_seconds_per_query": 2.249,
+    "mean_seconds_per_query": 2.237,
+    "peak_reserved_vram_gb": 20.062,
+    "single_box_final": 5395,
+    "multi_box_final": 295,
+    "automatic_retries": 21,
+    "initial_permanent_failures": 1,
+    "targeted_reprompt_repairs": 1,
+    "final_missing_or_invalid": 0,
+    "input_size_counts": {
+      "1792x1008": 5494,
+      "1536x864": 21,
+      "640x360": 175
+    }
+  },
+  "unlabeled_pilot": {
+    "sample_queries": 80,
+    "1024px": {"single_box": 72, "multi_box": 8, "median_seconds": 0.392, "peak_vram_gb": 9.156},
+    "1792px": {"single_box": 78, "multi_box": 2, "median_seconds": 2.227, "peak_vram_gb": 19.711},
+    "cross_resolution_first_box_median_iou": 0.954,
+    "cross_resolution_first_box_iou_below_0_5": 12,
+    "note": "No test labels: agreement is not accuracy"
+  },
+  "comparison_without_labels": {
+    "v0_0_first_box_iou_below_0_5_percent": 39.03,
+    "v3_0_first_box_iou_below_0_5_percent": 35.34,
+    "note": "Model disagreement is not an error rate"
+  },
+  "provenance": {
+    "queries_sha256": "717d15a1b9c270befa3b5930d0b9b00ef9c567c91bd0d54819ef0e17de5795c4",
+    "full_run_script_sha256": "0f283fa3da4ae90e3340d242a39aac0984247b880215adfc636de86dcc6c97b6",
+    "archive_sha256": "52dc59eb45ed1efc4f5db3d3d64329f76dbcd64230b4f73fe0c0c476c6c3b061",
+    "archive_member": "submission.json",
+    "platform_expected_member": "prediction.json",
+    "targeted_repair_qid": "004054_002",
+    "targeted_repair_prompt": "The dark drone flying lower on the left side of the image",
+    "targeted_repair_bbox": [0.364, 0.386, 0.559, 0.469]
+  },
+  "validation": {
+    "zip_crc_ok": true,
+    "all_query_ids_and_order_preserved": true,
+    "all_non_bbox_fields_preserved": true,
+    "all_boxes_finite_and_in_unit_square": true,
+    "official_score": null
+  }
+}
